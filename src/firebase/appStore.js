@@ -1,5 +1,5 @@
 ﻿import { initializeApp } from 'firebase/app';
-import { getLogin, getLogout } from 'auth';
+import { getLogin, getLogout } from './auth';
 
 // const exampleFirebaseConfig = {
 // 	apiKey: "",
