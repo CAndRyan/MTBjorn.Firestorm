@@ -1,6 +1,6 @@
 import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
-export const getLogin = (firebaseApp) = async (email, password) => {
+export const getLogin = (firebaseApp) => async (email, password) => {
 	const auth = getAuth(firebaseApp);
 
 	try {
@@ -16,7 +16,7 @@ export const getLogin = (firebaseApp) = async (email, password) => {
 	}
 };
 
-export const getLogout = (firebaseApp) = async () => {
+export const getLogout = (firebaseApp) => async () => {
 	const auth = getAuth(firebaseApp);
 
 	try {

@@ -7,7 +7,7 @@ const setupActiveFirebaseApp = ({ appName, appConfig, driverConfig }) => {
     setActiveFirebaseApp(appName);
 };
 
-export default {
+export {
     setupActiveFirebaseApp,
     getActiveFirebaseApp,
     uploadFile,
