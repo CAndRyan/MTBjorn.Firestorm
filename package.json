@@ -9,6 +9,16 @@
     "build": "npm run build:dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "firebase",
+    "utility",
+    "utilities"
+  ],
+  "homepage": "https://github.com/CAndRyan/MTBjorn.Firestorme",
+  "bugs": {
+    "url": "https://github.com/CAndRyan/MTBjorn.Firestorm/issues",
+    "email": "mtbjorn41@outlook.com"
+  },
   "author": "@CAndRyan",
   "repository": {
     "type": "git",
