@@ -10,9 +10,9 @@ An interface for interacting with Google Firebase data storage.
     ````javascript
     import { setupActiveFirebaseApp } from '@mtbjorn/firestorm';
     setupActiveFirebaseApp({
-		appName: userImageUploaderFirebaseAppName,
-		appConfig: userImageUploaderFirebaseConfig,
-		driverConfig: firebaseDriverConfig
+		appName: 'appName',
+		appConfig: {},
+		driverConfig: {}
 	});
     ````
 
