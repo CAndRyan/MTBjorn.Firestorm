@@ -1,18 +1,24 @@
 {
   "name": "@mtbjorn/firestorm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A driver for interacting with Firebase data storage",
-  "main": "src/index.js",
+  "main": "dist/mtbjorn-firestorm.js",
+  "entry": "src/index.js",
   "scripts": {
     "build:prod": "webpack --config=webpack.config.prod.js",
     "build:dev": "webpack --config=webpack.config.dev.js",
     "build": "npm run build:dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf dist",
+    "prepublish": "npm run clean && npm run build:prod"
   },
   "keywords": [
     "firebase",
     "utility",
     "utilities"
+  ],
+  "files": [
+    "/dist"
   ],
   "homepage": "https://github.com/CAndRyan/MTBjorn.Firestorme",
   "bugs": {
