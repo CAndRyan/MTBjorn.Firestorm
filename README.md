@@ -21,16 +21,30 @@ An interface for interacting with Google Firebase data storage.
 
     ````javascript
     import { getActiveFirebaseApp } from '@mtbjorn/firestorm';
-    const { login } = getActiveFirebaseApp();
-    await login('email', 'password');
+    const { isUserLoggedIn, login } = getActiveFirebaseApp();
+    
+    const userIsLoggedIn = await isUserLoggedIn('email');
+    if (!userIsLoggedIn) await login('email', 'password');
     ````
 
-1. Login to the active Firebase app
+1. Logout of the active Firebase app
 
     ````javascript
     import { getActiveFirebaseApp } from '@mtbjorn/firestorm';
     const { logout } = getActiveFirebaseApp();
     await logout();
+    ````
+
+1. Respond to changes in authentication status of active Firebase app
+
+    ````javascript
+    import { getActiveFirebaseApp } from '@mtbjorn/firestorm';
+    const { addAuthStateListener } = getActiveFirebaseApp();
+
+    const removeAuthStateListener = await addAuthStateListener((auth) => {
+        console.log(`Current user: ${auth.email}`)
+        removeAuthStateListener();
+    });
     ````
 
 1. Upload a file to storage

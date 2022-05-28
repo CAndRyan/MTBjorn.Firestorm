@@ -1,5 +1,5 @@
 ﻿import { initializeApp } from 'firebase/app';
-import { getLogin, getLogout } from './auth';
+import { getLoginCheck, getAddAuthStateListener, getLogin, getLogout } from './auth';
 
 // const exampleFirebaseConfig = {
 // 	apiKey: "",
@@ -12,7 +12,8 @@ import { getLogin, getLogout } from './auth';
 // };
 
 const defaultDriverConfig = {
-	cacheFileUploadMetadata: false
+	cacheFileUploadMetadata: false,
+	enableAuthPersistence: true
 };
 
 const firebaseAppStore = {};
@@ -24,7 +25,9 @@ export const registerFirebaseApp = (appName, appConfig, driverConfig = defaultDr
 	
 	firebaseAppStore[appName] = {
 		app,
-		login: getLogin(app),
+		isUserLoggedIn: getLoginCheck(app),
+		addAuthStateListener: getAddAuthStateListener(app),
+		login: getLogin(app, driverConfig.enableAuthPersistence),
 		logout: getLogout(app),
 		config: driverConfig
 	};
