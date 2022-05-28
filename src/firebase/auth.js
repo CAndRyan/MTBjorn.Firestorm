@@ -2,6 +2,9 @@ import { getAuth, signInWithEmailAndPassword, signOut, browserLocalPersistence, 
 
 export const getLoginCheck = (firebaseApp) => async (email) => {
 	const auth = getAuth(firebaseApp);
+
+	if (!email)
+		return auth && auth.currentUser;
 	
 	return auth && auth.currentUser && auth.currentUser.email === email;
 };
