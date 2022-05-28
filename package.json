@@ -1,6 +1,6 @@
 {
   "name": "@mtbjorn/firestorm",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A driver for interacting with Firebase data storage",
   "main": "dist/mtbjorn-firestorm.js",
   "entry": "src/index.js",
