@@ -2,6 +2,7 @@ import { registerFirebaseApp, setActiveFirebaseApp, getActiveFirebaseApp } from 
 import uploadFile from './firebase/uploadFile';
 import { getFileUploadCache } from './firebase/dataCache';
 import { readDataRecordList, readDataRecord, writeDataRecord } from './firebase/dbContext';
+import { readStorageFolder } from './firebase/storageContext';
 
 const setupActiveFirebaseApp = ({ appName, appConfig, driverConfig }) => {
     registerFirebaseApp(appName, appConfig, driverConfig);
@@ -15,5 +16,6 @@ export {
     getFileUploadCache,
     readDataRecordList,
     readDataRecord,
-    writeDataRecord
+    writeDataRecord,
+    readStorageFolder
 };
